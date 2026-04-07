@@ -22,18 +22,13 @@ public class Main {
     }
 
     public static boolean isSubset(int[] a, int[] b) {
-        for(int i=0;i<a.length;i++) {
-            if(a[i] == b[0]) {
-                if(i+b.length > a.length) return false;
-                for(int j=1;j<b.length;j++) {
-                    
-                    if(b[j] != a[i+j]) {
-                        return false;
-                    }
-                }
+        for(int i=0;i<a.length-b.length+1;i++) {
+            int cnt = 0;
+            for(int j=0;j<b.length;j++) {
+                if(b[j] == a[i+j]) cnt++;
             }
+            if(cnt == b.length) return true;
         }
-
-        return true;
+        return false;
     }
 }
