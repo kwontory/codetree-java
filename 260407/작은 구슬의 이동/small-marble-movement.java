@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
     public static int n, t, r, c, d;
-    public static int[] dx = new int[] {1,0,0,-1}; // U,R,L,D
+    public static int[] dx = new int[] {-1,0,0,1}; // U,R,L,D
     public static int[] dy = new int[] {0,1,-1,0};
 
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Main {
         t = sc.nextInt();
 
         // 초기 위치, 방향
-        r = sc.nextInt() - 1; 
+        r = sc.nextInt() - 1;
         c = sc.nextInt() - 1;
         d = getDir(sc.next().charAt(0));
 
