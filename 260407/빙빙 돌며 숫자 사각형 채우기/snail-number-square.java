@@ -23,11 +23,9 @@ public class Main {
             int ny = y + dm[dir];
             if(!inRange(nx,ny) || ans[nx][ny] != 0) {
                 dir = (dir + 1) % 4;
-                nx = x + dn[dir];
-                ny = y + dm[dir];
             }
-            x = nx;
-            y = ny;
+            x = x + dn[dir];
+            y = y + dm[dir];
             ans[x][y] = i + 1;
         }
 
