@@ -39,7 +39,8 @@ public class Main {
         } else {
             if(month == 2) return 29;
         }
-        if(month == 8 || month%2 == 1) return 31;
+        if(month < 8 && month%2 == 1) return 31;
+        if(month >= 8 && month%2 == 0) return 31;
         return 30;
     }
 
