@@ -9,30 +9,24 @@ public class Main {
         int[] dx = {1,0,-1,0};
         int[] dy = {0,-1,0,1};
         int x = 0, y = 0; // 초기 위치 (0,0)
-
+        int dir;
 
         for (int i = 0; i < n; i++) {
-            char direction = sc.next().charAt(0);
+            char cdir = sc.next().charAt(0);
             int distance = sc.nextInt();
             // Please write your code here.
-            switch(direction) {
-                case 'E' :
-                    x += dx[0]*distance;
-                    y += dy[0]*distance;
-                    break;
-                case 'S' :
-                    x += dx[1]*distance;
-                    y += dy[1]*distance;
-                    break;
-                case 'W' :
-                    x += dx[2]*distance;
-                    y += dy[2]*distance;
-                    break;
-                case 'N' :
-                    x += dx[3]*distance;
-                    y += dy[3]*distance;
-                    break;
+            if(cdir == 'E') {
+                dir = 0;
+            } else if(cdir == 'S') {
+                dir = 1;
+            } else if(cdir == 'W') {
+                dir = 2;
+            } else {
+                dir = 3;
             }
+            // 좌표 계산
+            x += dx[dir]*distance;
+            y += dy[dir]*distance;
         }
 
         System.out.printf("%d %d", x, y);
