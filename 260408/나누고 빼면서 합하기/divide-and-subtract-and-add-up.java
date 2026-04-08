@@ -7,11 +7,11 @@ public class Main {
         n = sc.nextInt();
         m = sc.nextInt();
         arr = new int[n];
-        for (int i = 1; i < n; i++)
+        for (int i = 0; i < n; i++)
             arr[i] = sc.nextInt();
         int sum = 0;
         while(m > 0) {
-            sum += arr[m];
+            sum += arr[m-1];
             manipulate();
         }
         System.out.print(sum);
