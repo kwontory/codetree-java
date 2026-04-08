@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static int MAX_VALUE = 100;
-    public static int[] a = new int[MAX_VALUE];
+    public static int[] a = new int[MAX_VALUE + 1];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
