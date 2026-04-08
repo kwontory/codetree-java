@@ -9,7 +9,7 @@ public class Main {
     }
 
     public static int f(int n) {
-        if(n == 0) return 0;
+        if(n == 0) return 0; // 종료 조건은 지극히 당연한 사실을 이용하면 된다.
         return f(n-1) + n;
     }
 }
