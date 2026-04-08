@@ -12,11 +12,9 @@ public class Main {
     public static boolean isSubset(String s1, String s2) {
         char[] sArr1 = s1.toCharArray();
         char[] sArr2 = s2.toCharArray();
-        
-        for(int i=0;i<=sArr1.length-sArr2.length;i++) {
-            for(int j=0;j<sArr2.length;j++) {
-                if(sArr2[j] != sArr1[i+j]) return false;
-            }
+
+        for(int j=0;j<sArr2.length;j++) {
+            if(sArr2[j] != sArr1[j]) return false;
         }
         return true;
     }
@@ -27,5 +25,4 @@ public class Main {
         }
         return -1;
     }
-
 }
