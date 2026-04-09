@@ -22,9 +22,14 @@ public class Main {
         for(int i=0;i<people.length;i++) {
             people[i] = new Person(sc.next(), sc.next(), sc.next());
         }
-        System.out.println("name " + people[n-1].name);
-        System.out.println("addr " + people[n-1].addr);
-        System.out.println("city " + people[n-1].city);
+        int idx = 0;
+        for(int i=0;i<people.length;i++) {
+            if(people[i].name.compareTo(people[idx].name) > 0) idx = i;
+        }
+
+        System.out.println("name " + people[idx].name);
+        System.out.println("addr " + people[idx].addr);
+        System.out.println("city " + people[idx].city);
 
     }
 }
