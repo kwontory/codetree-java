@@ -23,6 +23,7 @@ public class Main {
             data[i] = new Weather(sc.next(),sc.next(),sc.next());
         }
 
+        Arrays.sort(data,Comparator.comparing(d -> d.date));
         for(int i=0;i<n;i++) {
             if(data[i].weather.equals("Rain")) {
                 System.out.printf("%s %s %s", data[i].date, data[i].dayOfWeek, data[i].weather);
