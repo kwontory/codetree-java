@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++) {
+            arr[i] = sc.nextInt();
+            arr[i] = arr[i] < 0 ? -1 : 1;
+        }
+
+        int cnt = 1;
+        int max = 1;
+        for(int i=1;i<n;i++) {
+            if(arr[i] == arr[i-1]) {
+                cnt++;
+            } else {
+                cnt = 1;
+            }
+
+            if(max < cnt) max = cnt;
+        }
+
+        System.out.print(max);
+
+
+    }
+}
