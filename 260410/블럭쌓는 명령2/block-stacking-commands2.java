@@ -7,10 +7,10 @@ public class Main {
         int k = sc.nextInt();
         int[] blocks = new int[n];
         for(int i=0;i<k;i++) {
-            int a = sc.nextInt();
-            int b = sc.nextInt();
+            int a = sc.nextInt() - 1;
+            int b = sc.nextInt() - 1;
             for(int j=a;j<=b;j++) {
-                blocks[i]++;
+                blocks[j]++;
             }
         }
 
