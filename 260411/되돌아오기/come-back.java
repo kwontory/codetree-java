@@ -14,7 +14,6 @@ public class Main {
         int ans = -1;
         boolean stop = false;
         for(int i=0;i<n;i++) {
-            if(stop) break;
             char dir = sc.next().charAt(0);
             int d = getDir(dir);
             int dis = sc.nextInt();
@@ -28,6 +27,7 @@ public class Main {
                     break;
                 }
             }
+            if(stop) break;
         }
 
         System.out.print(ans);
