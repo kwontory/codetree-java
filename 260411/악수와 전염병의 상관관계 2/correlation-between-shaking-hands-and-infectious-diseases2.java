@@ -47,7 +47,7 @@ public class Main {
         int n = s.n;
         int m = s.m;
         boolean ninfected = status[n] == 1;
-        boolean minfected = status[n] == 1;
+        boolean minfected = status[m] == 1;
 
         if(ninfected && counts[n] < K) {
             status[m] = 1;
