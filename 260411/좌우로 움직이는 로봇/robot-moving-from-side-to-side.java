@@ -1,18 +1,22 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
     public static int[] a = new int[1000001];
     public static int[] b = new int[1000001];
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
         // (t, d)
         int curTime = 1;
         for(int i=0;i<n;i++) {
-            int t = sc.nextInt();
-            char d = sc.next().charAt(0);
+            st = new StringTokenizer(br.readLine());
+            int t = Integer.parseInt(st.nextToken());
+            char d = st.nextToken().charAt(0);
 
             for(int j=0;j<t;j++) {
                 if(d == 'L') {
@@ -29,8 +33,9 @@ public class Main {
         
         curTime = 1;
         for(int i=0;i<m;i++) {
-            int t = sc.nextInt();
-            char d = sc.next().charAt(0);
+            st = new StringTokenizer(br.readLine());
+            int t = Integer.parseInt(st.nextToken());
+            char d = st.nextToken().charAt(0);
 
             for(int j=0;j<t;j++) {
                 if(d == 'L') {
@@ -58,7 +63,10 @@ public class Main {
             }
         }
         
-        System.out.print(cnt);
+        bw.write(String.valueOf(cnt));
+        bw.newLine();
+        bw.flush();
+        // System.out.print(cnt);
 
     }
 }
