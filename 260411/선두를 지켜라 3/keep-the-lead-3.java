@@ -34,14 +34,14 @@ public class Main {
         // 총 이동시간은 동일하게 주어지므로 조정할 필요 X
         int totalTime = atime - 1;
 
-        int cnt = 0; // 처음 조합 1개..
+        int cnt = 0;
         int leader = 0;
         for(int i=1;i<=totalTime;i++) { // 여기도 인덱스가 헷갈림
             int currentLeader;
             if(a[i] > b[i]) currentLeader = 1;
             else if(b[i] > a[i]) currentLeader = 2;
             else currentLeader = 0;
-            
+            // 0시간에서 -> 1시간으로 바뀔 때도 바뀐 것으로 처리함
             if(currentLeader != leader) {
                 cnt++;
             }
