@@ -44,12 +44,16 @@ public class Main {
             int[] currXY = q.poll(); // 현재 위치를 꺼내고
             int currX = currXY[0];
             int currY = currXY[1];
-            visited[currX][currY] = 1; // 방문표시
+            // visited[currX][currY] = 1 꺼낼 땐 방문 표시를 할 필요가 없다.
             for(int i=0;i<4;i++) {
-
                 int nextX = currX + dx[i];
                 int nextY = currY + dy[i];
-                if(canGo(nextX, nextY)) q.add(new int[] {nextX, nextY});
+                
+                if(canGo(nextX, nextY)) {
+                    // 큐에 넣을 때 방문 표시를 해야 함...
+                    visited[nextX][nextY] = 1;
+                    q.add(new int[] {nextX, nextY});
+                } 
             }
         }
 
