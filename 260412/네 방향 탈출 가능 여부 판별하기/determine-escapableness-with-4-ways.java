@@ -41,23 +41,18 @@ public class Main {
         q.add(new int[] {x,y});
         visited[x][y] = 1;
         while(!q.isEmpty()) { // 큐가 비워질 때까지
+            int[] currXY = q.poll(); // 현재 위치를 꺼내고
+            int currX = currXY[0];
+            int currY = currXY[1];
+            visited[currX][currY] = 1; // 방문표시
             for(int i=0;i<4;i++) {
-                int newX = x + dx[i];
-                int newY = y + dy[i];
-                if(canGo(newX, newY)) q.add(new int[] {newX, newY});
+
+                int nextX = currX + dx[i];
+                int nextY = currY + dy[i];
+                if(canGo(nextX, nextY)) q.add(new int[] {nextX, nextY});
             }
-            int[] xy = q.poll(); // 가장 먼저 나올 곳 꺼내고
-            x = xy[0];
-            y = xy[1];
-            // System.out.printf("%d %d", xy[0], xy[1]);
-            visited[x][y] = 1; // 방문표시...
         }
-        // for(int i=0;i<n;i++) {
-        //     for(int j=0;j<m;j++) {
-        //         System.out.print(visited[i][j]);
-        //     }
-        //     System.out.println();
-        // }
-        System.out.println(visited[n-1][m-1]);
+
+        System.out.print(visited[n-1][m-1]);
     }    
 }
