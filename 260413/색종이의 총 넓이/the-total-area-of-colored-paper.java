@@ -21,8 +21,8 @@ public class Main {
         }
 
         int result = 0;
-        for(int j=0;j<OFFSET*2+1;j++) {
-            for(int k=0;k<OFFSET*2+1;k++) {
+        for(int j=0;j<plane.length;j++) {
+            for(int k=0;k<plane[j].length;k++) {
                 result += plane[j][k];
             }
         }
